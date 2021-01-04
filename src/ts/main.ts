@@ -1,3 +1,5 @@
+const btn = document.getElementById('show-modal');
+
 // Añadir un objeto de atributos a un elemento
 const addAttributes = (element:any, attrObj:any) => {
     for (let attr in attrObj) {
@@ -31,12 +33,22 @@ const printModal = (content:string) => {
     
     // Create container father
     const modalConatiner = createCustomElement('div', {
-        id: 'modal-conatiner', 
+        id: 'modal-container', 
         class: 'modal-container'}, [modalContent]);
 
     // print modal
     document.body.appendChild(modalConatiner);
+
+    // Remove modal
+    const removeModal = () => {
+        document.body.removeChild(modalConatiner);
+    }
+
+    modalConatiner.addEventListener('click', e => {
+        if(e.target === modalConatiner) removeModal()
+    })
 }
 
-printModal(`<h1>Hello World`);
+btn?.addEventListener('click', () => printModal(`<h1>Hello World`))
+
 

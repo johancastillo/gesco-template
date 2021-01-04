@@ -1,0 +1,14 @@
+.modal-container {
+  background: rgba(0, 0, 0, 0.8) !important;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  display: flex !important;
+  z-index: 200; }
+
+.modal-content {
+  background: #fff !important;
+  width: 90% !important;
+  margin: auto !important;
+  max-width: 1000px !important; }

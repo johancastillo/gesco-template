@@ -1,0 +1,13 @@
+{
+  "name": "administrator-plaza",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/johancastillo/administrator-plaza.git",
+  "author": "Johan Castillo <jcjohan2707@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "4.0.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "typescript": "^4.1.3"
+  }
+}

@@ -1,0 +1,20 @@
+//- Config
+block config
+    include ../includes/config
+
+//- Mixins
+include ../mixins/btns
+
+doctype html
+html
+    head
+        title Administrator
+
+        block styles
+            link(rel="stylesheet", href="./assets/css/styles.css")
+            link(rel="stylesheet", href="./assets/css/bootstrap.min.css")
+            link(rel="stylesheet", href="./assets/css/dashboard.css")
+    body
+        block content
+    
+        block scripts

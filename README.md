@@ -1,4 +1,4 @@
-# Gesco (Gestión Contable)
+# Gesco (Gestor Contable)
 
 ## Pug Compiler
 

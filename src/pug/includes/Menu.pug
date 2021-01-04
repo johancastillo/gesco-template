@@ -1,36 +1,46 @@
 nav#sidebarMenu.col-md-3.col-lg-2.d-md-block.bg-light.sidebar.collapse
     div.position-sticky.pt-3
-        <ul class="nav flex-column">
+        ul.nav.flex-column
+
+            li.nav-item
+                a.nav-link.active(aria-current="page" href="#")
+                    span(data-feather="home")
+                    span Principal
+
+            li.nav-item
+                a.nav-link(href="#")
+                    <span data-feather="file"></span>
+                    span Ordenes
+                </a>
+
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-                <span data-feather="home"></span>
-                span Principal
-            </a>
+                <a class="nav-link" href="#">
+                    <span data-feather="shopping-cart"></span>
+                    span Productos
+                </a>
             </li>
+
             <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                span Ordenes
-            </a>
+                <a class="nav-link" href="#">
+                    span(data-feather="shopping-cart")
+                    span Inventario
+                </a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                span Productos
-            </a>
-            </li>
+
             <li class="nav-item">
             <a class="nav-link" href="#">
                 <span data-feather="users"></span>
                 span Proveedores
             </a>
             </li>
+
             <li class="nav-item">
             <a class="nav-link" href="#">
                 <span data-feather="bar-chart-2"></span>
                 span Reportes
             </a>
             </li>
+
             <li class="nav-item">
             <a class="nav-link" href="#">
                 <span data-feather="layers"></span>

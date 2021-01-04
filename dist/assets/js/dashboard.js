@@ -16,7 +16,7 @@
                 'Miercoles',
                 'Jueves',
                 'Viernes',
-                'Sábado'
+                'Sabado'
             ],
             datasets: [{
                     data: [

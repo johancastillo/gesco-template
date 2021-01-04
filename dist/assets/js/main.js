@@ -1,28 +1,40 @@
 "use strict";
-// Add a object of attributes to the element
-var addAttribute = function (element, attrObject) {
-    for (var attr in attrObject) {
-        if (attrObject.hasOwnProperty(attr))
-            element.setAttribute(attr, attrObject[attr]);
+// Añadir un objeto de atributos a un elemento
+const addAttributes = (element, attrObj) => {
+    for (let attr in attrObj) {
+        if (attrObj.hasOwnProperty(attr))
+            element.setAttribute(attr, attrObj[attr]);
     }
 };
-// Create Elements with attributes and childs
-var createCustomElement = function (element, attributes, children) {
-    var customElement = document.createElement(element);
+// Crear elementos con atributos e hijo
+const createCustomElement = (element, attributes, children) => {
+    let customElement = document.createElement(element);
     if (children !== undefined)
-        children.forEach(function (child) {
-            if (child.nodeType) {
-                if (child.nodeType === 1 || child.nodeType === 11) {
-                    customElement.appendChild(child);
-                }
-                else {
-                    customElement.innerHTML += child;
-                }
+        children.forEach(el => {
+            if (el.nodeType) {
+                if (el.nodeType === 1 || el.nodeType === 11)
+                    customElement.appendChild(el);
+            }
+            else {
+                customElement.innerHTML += el;
             }
         });
-    addAttribute(customElement, attributes);
+    addAttributes(customElement, attributes);
     return customElement;
 };
-// Creating new element
-var el = createCustomElement('btn', { class: 'btn btn-primary' }, ['Ir a EDteam']);
-console.log(el);
+// Print modal
+const printModal = (content) => {
+    // Create container child
+    const modalContent = createCustomElement('div', {
+        id: 'modal-content',
+        class: 'modal-content'
+    }, [content]);
+    // Create container father
+    const modalConatiner = createCustomElement('div', {
+        id: 'modal-conatiner',
+        class: 'modal-container'
+    }, [modalContent]);
+    // print modal
+    document.body.appendChild(modalConatiner);
+};
+printModal(`<h1>Hello World`);

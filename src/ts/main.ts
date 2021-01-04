@@ -1,32 +1,42 @@
-// Add a object of attributes to the element
-const addAttribute = (element:any, attrObject:any):any =>{
-    for(let attr in attrObject){
-        if(attrObject.hasOwnProperty(attr)) element.setAttribute(attr, attrObject[attr])
+// Añadir un objeto de atributos a un elemento
+const addAttributes = (element:any, attrObj:any) => {
+    for (let attr in attrObj) {
+      if (attrObj.hasOwnProperty(attr)) element.setAttribute(attr,attrObj[attr])
     }
-}
+  };
 
-// Create Elements with attributes and childs
-const createCustomElement = (element:string, attributes:object, children:string[]) => {
+// Crear elementos con atributos e hijo
+const createCustomElement = (element:string,attributes:object,children:any[]) => {
     let customElement = document.createElement(element);
-
-    if(children !== undefined) children.forEach( (child:any) => {
-        if(child.nodeType){
-            if(child.nodeType === 1 || child.nodeType === 11){
-                customElement.appendChild(child);
-            }else{
-                customElement.innerHTML += child;
-            }
-        }
+    if (children !== undefined) children.forEach(el => {
+      if (el.nodeType) {
+        if (el.nodeType === 1 || el.nodeType === 11) customElement.appendChild(el);
+      } else {
+        customElement.innerHTML += el;
+      }
     });
 
-    addAttribute(customElement, attributes);
-
+    addAttributes(customElement,attributes);
     return customElement;
+  };
+
+
+// Print modal
+const printModal = (content:string) => {
+    // Create container child
+    const modalContent = createCustomElement('div', {
+        id: 'modal-content',
+        class: 'modal-content'
+    }, [content]);
+    
+    // Create container father
+    const modalConatiner = createCustomElement('div', {
+        id: 'modal-conatiner', 
+        class: 'modal-container'}, [modalContent]);
+
+    // print modal
+    document.body.appendChild(modalConatiner);
 }
 
-
-// Creating new element
-const el = createCustomElement('btn',{class: 'btn btn-primary'}, ['Ir a EDteam']);
-
-console.log(el)
+printModal(`<h1>Hello World`);
 

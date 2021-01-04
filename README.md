@@ -1,6 +1,6 @@
 # Gesco (Gestión Contable)
 
-## Compiler Pug
+## Pug Compiler
 
 For Development
 ```shell
@@ -12,13 +12,13 @@ For Production
 $ yarn pug src/pug/pages/ -o dist/ -p src/pug/includes/
 ```
 
-## Compiler TypeScript
+## TypeScript Compiler
 
 ```shell
 $ yarn tsc
 ```
 
-## Compiler Sass
+## Sass Compiler
 
 ```shell
 $ yarn node-sass src/scss --output dist/assets/css

@@ -3,5 +3,14 @@ extends ../templates/template
 block content
     //- ***** Top Bar *****
     include ../includes/TopBar
-    //- ***** Menu *****
-    include ../includes/Menu
+
+    //- Main Area
+    <div class="container-fluid">
+        <div class="row">
+            //- ***** Menu *****
+            include ../includes/Menu
+            //- Content Table
+            include ../includes/ContentMain
+        </div>
+    </div>
+

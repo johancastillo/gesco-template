@@ -47,3 +47,12 @@ const printModal = (content) => {
     });
 };
 btn === null || btn === void 0 ? void 0 : btn.addEventListener('click', () => printModal(`<h1>Hello World`));
+/*
+Keyboard shortcut
+*/
+addEventListener('keydown', e => {
+    if (e.key == 'a' && e.ctrlKey == true) {
+        e.preventDefault();
+        printModal(`<h1>Hello World`);
+    }
+});
